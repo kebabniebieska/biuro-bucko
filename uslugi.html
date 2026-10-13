@@ -35,11 +35,35 @@
 <div style="width: 100%; min-height: 100vh; background: #EAF4FB; color: #0F2A3D; --accent: #1D73B5;">
 
   <!-- Page header -->
-  <section style="position: relative; overflow: hidden; background: radial-gradient(ellipse 1100px 300px at 50% 92%, rgba(255,255,255,0.5), transparent 70%), linear-gradient(180deg, #3C5460 0%, #51707C 35%, #7897A1 68%, #A9BEC2 100%);">
-    <svg class="hide-mobile" width="100%" height="140" viewBox="0 0 1440 140" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: -6%; opacity: 0.22; filter: blur(5px); pointer-events: none;" aria-hidden="true">
-      <path d="M0,100 C200,70 360,120 560,90 C760,60 920,110 1120,80 C1280,58 1360,95 1440,78 L1440,140 L0,140 Z" fill="#16242C"></path>
+  <section style="position: relative; overflow: hidden; background: #7897A1;">
+    <svg width="100%" height="100%" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; z-index: 0;" aria-hidden="true">
+      <defs>
+        <linearGradient id="pageSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3C5460"></stop>
+          <stop offset="18%" stop-color="#51707C"></stop>
+          <stop offset="38%" stop-color="#7897A1"></stop>
+          <stop offset="58%" stop-color="#A9BEC2"></stop>
+          <stop offset="74%" stop-color="#D3DEDC"></stop>
+          <stop offset="88%" stop-color="#EDF1EF"></stop>
+          <stop offset="100%" stop-color="#FFFFFF"></stop>
+        </linearGradient>
+        <radialGradient id="pageGlow" cx="68%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5"></stop>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="pageHillFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#15242C" stop-opacity="0.38"></stop>
+          <stop offset="100%" stop-color="#15242C" stop-opacity="0"></stop>
+        </linearGradient>
+        <filter id="pageBlur" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="8"></feGaussianBlur>
+        </filter>
+      </defs>
+      <rect x="0" y="0" width="1440" height="320" fill="url(#pageSky)"></rect>
+      <ellipse cx="920" cy="150" rx="520" ry="140" fill="url(#pageGlow)" filter="url(#pageBlur)"></ellipse>
+      <path d="M0,190 C180,166 320,198 480,178 C640,158 760,192 920,174 C1080,156 1220,186 1440,168 L1440,260 L0,260 Z" fill="url(#pageHillFade)" filter="url(#pageBlur)"></path>
     </svg>
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,25,31,0.5) 0%, rgba(13,25,31,0.18) 60%, rgba(13,25,31,0.05) 100%);"></div>
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,20,26,0.48) 0%, rgba(10,20,26,0.18) 55%, rgba(10,20,26,0.02) 100%);"></div>
     <header style="position: relative; z-index: 2;">
       <div style="max-width: 1180px; margin: 0 auto; padding: 26px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
         <a href="index.html" style="display: flex; align-items: center; gap: 12px;">

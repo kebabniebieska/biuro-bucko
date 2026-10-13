@@ -45,22 +45,64 @@
 <div style="width: 100%; min-height: 100vh; background: #EAF4FB; color: #0F2A3D; --accent: #1D73B5;">
 
   <!-- Hero -->
-  <section style="position: relative; overflow: hidden; background: radial-gradient(ellipse 1100px 420px at 50% 64%, rgba(255,255,255,0.55), transparent 70%), linear-gradient(180deg, #3C5460 0%, #4D6C78 20%, #6A8893 38%, #8FA9B0 54%, #BBCCCE 70%, #E3EAE8 88%, #F1F4F2 100%);">
+  <section style="position: relative; overflow: hidden; background: #BEE3F8;">
 
-    <!-- misty horizon over the water -->
-    <svg class="hide-mobile" width="100%" height="240" viewBox="0 0 1440 240" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: 6%; opacity: 0.24; filter: blur(5px); pointer-events: none;" aria-hidden="true">
-      <path d="M0,170 C180,130 320,190 480,150 C640,110 760,180 920,140 C1080,100 1220,170 1440,130 L1440,240 L0,240 Z" fill="#16242C"></path>
-    </svg>
-    <!-- reeds silhouette -->
-    <svg class="hide-mobile" width="220" height="150" viewBox="0 0 220 150" style="position: absolute; left: 6%; bottom: 0; opacity: 0.3; pointer-events: none;" aria-hidden="true">
-      <g stroke="#19292F" stroke-width="2" stroke-linecap="round">
-        <line x1="10" y1="150" x2="4" y2="28"></line>
-        <line x1="26" y1="150" x2="34" y2="46"></line>
-        <line x1="42" y1="150" x2="37" y2="16"></line>
-        <line x1="58" y1="150" x2="66" y2="58"></line>
+    <!-- painterly sunny sky & sea illustration -->
+    <svg width="100%" height="100%" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; z-index: 0;" aria-hidden="true">
+      <defs>
+        <linearGradient id="skyWater" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3E9CDC"></stop>
+          <stop offset="18%" stop-color="#6BB6E6"></stop>
+          <stop offset="38%" stop-color="#9ED1EF"></stop>
+          <stop offset="54%" stop-color="#CFE9F6"></stop>
+          <stop offset="63%" stop-color="#EAF6FB"></stop>
+          <stop offset="68%" stop-color="#DCEEF7"></stop>
+          <stop offset="78%" stop-color="#9BCDE9"></stop>
+          <stop offset="90%" stop-color="#4FA0D6"></stop>
+          <stop offset="100%" stop-color="#1F74B2"></stop>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="58%" cy="18%" r="55%">
+          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75"></stop>
+          <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.22"></stop>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="waterShine" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"></stop>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"></stop>
+        </linearGradient>
+        <filter id="blurSoft" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="9"></feGaussianBlur>
+        </filter>
+        <filter id="blurSofter" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="26"></feGaussianBlur>
+        </filter>
+        <filter id="blurCloud" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="14"></feGaussianBlur>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="1440" height="640" fill="url(#skyWater)"></rect>
+      <ellipse cx="840" cy="110" rx="680" ry="260" fill="url(#sunGlow)" filter="url(#blurSofter)"></ellipse>
+
+      <!-- soft clouds drifting across the sky -->
+      <g fill="#FFFFFF" filter="url(#blurCloud)">
+        <ellipse cx="220" cy="130" rx="150" ry="36" opacity="0.85"></ellipse>
+        <ellipse cx="320" cy="108" rx="110" ry="30" opacity="0.8"></ellipse>
+        <ellipse cx="760" cy="80" rx="190" ry="42" opacity="0.8"></ellipse>
+        <ellipse cx="880" cy="60" rx="130" ry="30" opacity="0.7"></ellipse>
+        <ellipse cx="1180" cy="150" rx="170" ry="38" opacity="0.8"></ellipse>
+        <ellipse cx="1290" cy="128" rx="110" ry="28" opacity="0.7"></ellipse>
+        <ellipse cx="60" cy="210" rx="130" ry="26" opacity="0.55"></ellipse>
+        <ellipse cx="1000" cy="220" rx="150" ry="24" opacity="0.5"></ellipse>
       </g>
+
+      <!-- shimmering light on the water -->
+      <path d="M0,340 C180,330 320,352 500,338 C680,324 820,350 1000,336 C1180,322 1320,346 1440,332 L1440,420 L0,420 Z" fill="url(#waterShine)" filter="url(#blurSoft)"></path>
+      <path d="M0,420 C200,436 380,406 560,428 C740,450 900,414 1080,432 C1220,446 1340,424 1440,436 L1440,500 L0,500 Z" fill="url(#waterShine)" opacity="0.35" filter="url(#blurSofter)"></path>
     </svg>
-    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,25,31,0.58) 0%, rgba(13,25,31,0.3) 42%, rgba(13,25,31,0.08) 68%, rgba(13,25,31,0.16) 100%);"></div>
+
+    <!-- scrim for text legibility -->
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,28,44,0.6) 0%, rgba(8,28,44,0.32) 36%, rgba(8,28,44,0.1) 58%, rgba(8,28,44,0.22) 100%);"></div>
 
     <header style="position: relative; z-index: 2;">
       <div style="max-width: 1180px; margin: 0 auto; padding: 26px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
@@ -88,7 +130,7 @@
       <h1 class="hero-h1" style="font-size: 44px; line-height: 1.22; font-weight: 800; margin: 0 0 20px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.01em;">
         Tradycja, doświadczenie i bezpieczeństwo Twojej firmy
       </h1>
-      <p style="font-size: 18px; line-height: 1.6; color: #E4F2FA; max-width: 560px; margin: 0 auto 36px;">
+      <p style="font-size: 18px; line-height: 1.6; color: #0B2C42; font-weight: 500; max-width: 560px; margin: 0 auto 36px;">
         Ponad 30 lat praktyki w księgowości i doradztwie podatkowym — od 1993 roku w Białymstoku.
       </p>
       <div class="hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
