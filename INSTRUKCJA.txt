@@ -1,0 +1,22 @@
+EDYCJA TEKSTÓW — BIURO RACHUNKOWE BUĆKO
+
+1. Otwórz plik teksty.txt w Notatniku lub edytorze tekstu.
+2. Znajdź nazwę podstrony (index.html, dlaczego-my.html, uslugi.html, kontakt.html).
+3. Zmieniaj wyłącznie tekst po dwukropku w cudzysłowie, np. "001 | ...": "NOWY NAPIS".
+   Fragment przed dwukropkiem jest identyfikatorem — NIE ZMIENIAJ GO.
+4. Zapisz plik w UTF-8 i odśwież stronę (Ctrl+F5).
+5. Nie usuwaj przecinków, nawiasów klamrowych ani cudzysłowów. Cudzysłów w treści zapisuj jako \".
+
+UWAGA: Strona musi być otwierana przez serwer HTTP/HTTPS. Przy otwieraniu
+pliku index.html przez dwuklik (adres file://) przeglądarki zwykle blokują
+odczyt teksty.txt. Po publikacji na hostingu działa automatycznie.
+
+DO TESTÓW NA KOMPUTERZE: w folderze projektu uruchom polecenie:
+python -m http.server 8000
+Następnie otwórz http://localhost:8000/
+
+Teksty w grafice baner-wzor-bucko.jpg są częścią obrazu i nie mogą być
+zmienione przez teksty.txt. Edycja pliku nie zmienia także numeru w linku
+tel: ani adresu w linku mailto: — te odnośniki są zapisane w HTML.
+
+Zmiany w tekście nie wpływają na działanie animacji kafelków.

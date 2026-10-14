@@ -1,0 +1,28 @@
+/* Baner zachowuje oryginalny kadr i proporcje */
+.faithful-banner{position:relative;width:min(100%,1280px);margin:0 auto;background:#091d2d;line-height:0;overflow:hidden;isolation:isolate}
+.faithful-banner>img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+/* Cztery niezależne strefy, każda dokładnie 25% szerokości banera. */
+.banner-hotspots{position:absolute;inset:67% 0 9% 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));pointer-events:none}
+.banner-hotspots>a{box-sizing:border-box;position:relative;display:block;width:100%;height:100%;min-width:0;pointer-events:auto;background:transparent;outline:none;text-decoration:none}
+/* Jedna linia o identycznej długości i odległości od dolnej krawędzi w każdym kafelku. */
+.banner-hotspots>a::after{content:"";position:absolute;left:var(--line-left,18%);width:64%;right:auto;bottom:0;height:2px;background:#d6ad6b;opacity:0;transform:none;transition:opacity .25s ease;pointer-events:none}
+.banner-hotspots>a:hover::after,.banner-hotspots>a:focus-visible::after{opacity:1}
+.banner-hotspots>a:focus-visible{outline:1px solid #d6ad6b;outline-offset:-2px}
+.mb-next{padding:70px 24px 85px}
+.premium-nav{min-height:62px;padding-top:8px;padding-bottom:8px}
+@media(max-width:700px){.faithful-banner{width:100%}.banner-hotspots{inset:67% 0 9% 0}.mb-next{padding:48px 18px 60px}}
+@media(prefers-reduced-motion:reduce){.banner-hotspots a,.banner-hotspots a::after{transition:none}}
+/* Zwarta sekcja pod banerem: bez dużej pustej przestrzeni. */
+.mb-next{padding:24px 20px 30px!important;min-height:0!important}
+.mb-next h2{font-size:clamp(26px,3vw,38px)!important;margin:7px auto 6px!important;line-height:1.15}
+.mb-next p{line-height:1.5!important;margin:0 auto 10px!important;max-width:740px}
+.mb-next .mb-btn{padding:11px 18px;margin:4px}
+/* Elementy tej sekcji muszą pozostać widoczne również bez JS. */
+/* Animacje w tej sekcji kontroluje wspólny skrypt animacje.js. */
+@media(max-width:700px){.mb-next{padding:20px 16px 24px!important}.mb-next h2{font-size:26px!important}}
+
+/* Korekta optyczna: środek linii pod ikoną i podpisem, a nie pod geometryczną ćwiartką obrazu. */
+.banner-hotspots>a:nth-child(1){--line-left:29%}
+.banner-hotspots>a:nth-child(2){--line-left:18%}
+.banner-hotspots>a:nth-child(3){--line-left:6%}
+.banner-hotspots>a:nth-child(4){--line-left:7%}
