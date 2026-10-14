@@ -1,7 +1,7 @@
 {
   "index.html": {
     "teksty": {
-      "001 | BIURO RACHUNKOWE": "BIURO RACHUNKOWE",
+      "001 | BIURO RACHUNKOWE": "BIURO RACHUNKOWE I KSIĘGOWE",
       "002 | BUĆKO": "BUĆKO",
       "003 | ☰": "☰",
       "004 | START": "START",
