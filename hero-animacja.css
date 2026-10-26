@@ -1,0 +1,27 @@
+/* Hero na żywo: tło przybliża się powoli, tekst wjeżdża od dołu (efekt jak na mmbkancelaria.pl) */
+.hero-live{height:clamp(540px,46vw,660px);background:#f6f2ec}
+.hero-live .hero-bg{position:absolute;inset:0;background:url('hero-tlo.jpg') right center/cover no-repeat;transform-origin:70% 45%;animation:heroZoom 9s cubic-bezier(.2,.6,.3,1) both;will-change:transform}
+.hero-live .mb-center{top:4%;left:2%;width:62%;height:84%;animation:heroIn 1.1s cubic-bezier(.22,.9,.32,1) .15s both}
+.hero-live .mb-logo{mix-blend-mode:normal;width:clamp(200px,28vw,400px);max-height:44%;margin-bottom:6px}
+.hero-live h1{font:500 clamp(38px,4.4vw,66px)/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:.01em;margin:6px 0 10px;color:#091d2d}
+@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.1)}}
+@keyframes heroIn{from{opacity:0;transform:translate3d(0,70px,0)}to{opacity:1;transform:none}}
+
+/* Granatowy pas usług — fala zachodzi na zdjęcie jak na banerze */
+.mb-services{margin-top:-1px;z-index:2}
+.mb-services:before{top:-58px;height:92px;clip-path:ellipse(60% 70% at 46% 100%)}
+.mb-service h2{font-family:'Cormorant Garamond',Georgia,serif}
+.mb-service:hover{transform:translateY(-6px)}
+
+@media(max-width:800px){
+  .hero-live{height:600px}
+  .hero-live .hero-bg{background-position:72% center}
+  .hero-live .hero-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,248,243,.9),rgba(250,248,243,.78) 70%,rgba(250,248,243,.4))}
+  .hero-live .mb-center{width:90%;left:5%;top:2%;height:88%}
+  .hero-live h1{font-size:42px}
+}
+@media(max-width:480px){.hero-live{height:540px}.hero-live .mb-logo{width:240px}.hero-live h1{font-size:36px}}
+@media(prefers-reduced-motion:reduce){.hero-live .hero-bg,.hero-live .mb-center{animation:none}}
+html,body{overflow-x:clip}
+.hero-live .mb-center{top:6%;height:80%}
+.hero-live .mb-logo{width:clamp(180px,22vw,320px);max-height:38%}
