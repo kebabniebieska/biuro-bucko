@@ -1,0 +1,85 @@
+/* Stopka z pełnymi danymi, ikona telefonu na komórce, logo B&B, księgi w hero, 5 paneli */
+.site-footer{background:#091d2d;color:#c9d2da;padding:52px max(4vw,24px) 0;text-align:left;font-size:13px}
+.footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+.site-footer h3{font:600 12px Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d4ae70;margin:4px 0 14px}
+.site-footer p{margin:0 0 14px;line-height:1.75}
+.site-footer b{color:#fff;font-weight:600}
+.site-footer a{color:#fff;margin:0;text-decoration:none}
+.site-footer a:hover{color:#d4ae70}
+.footer-brand img{display:block;width:120px;height:auto;background:#faf8f3;padding:10px 12px;border-radius:2px;margin-bottom:16px}
+.footer-dp{color:#d4ae70}
+.footer-links a{display:block;color:#c9d2da}
+.footer-bottom{max-width:1180px;margin:30px auto 0;padding:18px 0 22px;border-top:1px solid #23394b;color:#8796a3;font-size:12px;text-align:center}
+
+/* Logo B&B w nagłówku */
+.premium-brand img{width:auto;height:40px;object-fit:contain}
+.premium-brand{gap:12px}
+
+/* Ikona telefonu — tylko na telefonie/tablecie */
+.mobile-call{display:none}
+@media(max-width:800px){
+  .mobile-call{display:flex;align-items:center;justify-content:center;width:42px;height:42px;margin-left:auto;border:1px solid #b98d43;border-radius:50%;color:#091d2d}
+  .mobile-call svg{width:20px;height:20px;fill:none;stroke:#b98d43;stroke-width:1.8;stroke-linejoin:round}
+  .mobile-menu{margin-left:6px}
+  .premium-brand img{height:32px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.site-footer{padding-top:40px}}
+
+/* Hero: logo B&B, nazwiska, księgi */
+.hero-live .mb-logo{width:clamp(200px,24vw,340px);max-height:none;height:auto}
+.hero-live h1 span{white-space:nowrap}
+.hero-books{position:absolute;right:3%;top:8%;height:80%;width:auto;filter:drop-shadow(0 18px 22px rgba(9,29,45,.28))}
+
+/* 5 paneli usług */
+.mb-services-grid{grid-template-columns:repeat(5,1fr)}
+.mb-service{padding:15px 10px 20px}
+.mb-service h2{font-size:clamp(18px,1.8vw,26px)}
+.mb-service p{font-size:13px}
+@media(max-width:1100px){.mb-services-grid{grid-template-columns:repeat(3,1fr);row-gap:28px}.mb-service:nth-child(3):after{display:none}}
+@media(max-width:800px){.mb-services-grid{grid-template-columns:repeat(2,1fr)}.mb-service:nth-child(3):after{display:block}.mb-service:nth-child(2n):after{display:none}.mb-service:last-child{grid-column:1/-1}.hero-books{display:none}}
+@media(max-width:480px){.mb-services-grid{grid-template-columns:1fr}.mb-service:after{display:none!important}}
+
+/* Informacja o prywatności */
+.privacy{max-width:860px;padding-top:40px;padding-bottom:70px}
+.privacy h2{font:600 26px 'Cormorant Garamond',Georgia,serif;color:#091d2d;margin:30px 0 10px}
+.privacy p{line-height:1.8;color:#3a4a57}
+.privacy a{color:#b98d43}
+/* Cyfry w jednej linii (Cormorant ma domyślnie cyfry nautyczne) */
+*{font-variant-numeric:lining-nums!important}
+.privacy-lead{font-size:15px}
+.privacy ol,.privacy ul{padding-left:22px;color:#3a4a57;line-height:1.8}
+.privacy li{margin-bottom:6px}
+.privacy ul ul{margin-top:6px}
+.privacy b{color:#091d2d}
+.privacy-list{padding-left:20px;max-width:780px}
+.privacy-list li{margin-bottom:16px;line-height:1.75}
+
+/* Formularz kontaktowy */
+.contact-form-wrap{max-width:1058px;margin:0 auto 64px;background:#fff;border-top:2px solid #b98d43;box-shadow:0 8px 25px #091d2d0a;padding:40px 44px 36px}
+.cf-head{margin-bottom:26px}
+.cf-eyebrow{font:600 11px Montserrat,sans-serif;letter-spacing:.18em;color:#b98d43}
+.cf-head h2{font:600 clamp(28px,3vw,38px)/1.15 'Cormorant Garamond',Georgia,serif;color:#091d2d;margin:8px 0 6px}
+.cf-head p{margin:0;color:#65717a;font-size:14px}
+.contact-form{display:flex;flex-direction:column;gap:18px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cf-field{display:flex;flex-direction:column;gap:7px}
+.cf-field span{font-size:12px;font-weight:600;letter-spacing:.04em;color:#a37e46}
+.cf-field i,.cf-consent i,.cf-foot i{color:#b98d43;font-style:normal}
+.cf-field input,.cf-field textarea{font:400 15px Montserrat,sans-serif;color:#142838;background:#faf8f3;border:1px solid #e1d6c3;border-radius:2px;padding:13px 14px;transition:border-color .2s,box-shadow .2s,background .2s;width:100%;box-sizing:border-box}
+.cf-field textarea{resize:vertical;min-height:140px}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:#b98d43;background:#fff;box-shadow:0 0 0 3px rgba(185,141,67,.15)}
+.cf-consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.6;color:#4b5a66;cursor:pointer}
+.cf-consent input{width:18px;height:18px;margin:2px 0 0;accent-color:#b98d43;flex:none}
+.cf-consent a{color:#b98d43;text-decoration:underline}
+.cf-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.cf-foot small{color:#8a96a0;font-size:12px}
+.cf-submit{min-width:220px}
+.cf-submit:disabled{opacity:.6;cursor:wait}
+.cf-error input,.cf-error textarea{border-color:#c0392b;background:#fff7f6}
+.cf-consent.cf-error span{color:#c0392b}
+.cf-status{margin:0;font-size:14px;min-height:1px}
+.cf-status.ok{color:#2f7a4b;font-weight:600}
+.cf-status.err{color:#c0392b}
+.cf-honey{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+@media(max-width:720px){.contact-form-wrap{padding:30px 22px 26px;margin:0 0 45px}.cf-row{grid-template-columns:1fr}.cf-submit{width:100%}}
