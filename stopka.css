@@ -93,7 +93,7 @@
 /* Adres jako link do mapy */
 .map-link{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
 .map-link:hover{color:#b98d43}
-.map-cta{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:#b98d43;text-decoration:none;letter-spacing:.02em}
+.map-cta{display:block;width:fit-content;margin-top:8px;font-size:12px;font-weight:600;color:#b98d43;text-decoration:none;letter-spacing:.02em}
 .map-cta:hover{text-decoration:underline}
 .site-footer .map-link{color:#c9d2da;border-bottom-color:#4a5d6c}
 
@@ -114,3 +114,11 @@
 .tb-item h3{font:600 clamp(22px,2vw,27px)/1.2 'Cormorant Garamond',Georgia,serif;color:#fff;margin:18px 0 10px;letter-spacing:.01em}
 .tb-item p{font-size:14px;line-height:1.7;color:#c9d2da;margin:0}
 @media(max-width:860px){.trust-band-grid{grid-template-columns:1fr;gap:30px}.tb-item{padding:0 4px}.tb-item:after{display:none}.trust-band{padding:44px 22px}}
+
+/* Kontakt: ciaśniejsze odstępy w danych kontaktowych */
+.contact-cards .contactleft .contact-details p{margin:0 0 11px}
+.contact-cards .contactleft .contact-details small{margin-bottom:1px;font-size:11.5px}
+.contact-cards .contactleft .contact-details b{line-height:1.45}
+.contact-cards .contactleft .map-cta{margin-top:4px}
+.contact-cards .contact-card h2{margin-bottom:14px}
+.contact-cards .contactleft .btn{margin-top:14px}
