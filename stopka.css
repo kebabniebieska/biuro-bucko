@@ -153,3 +153,5 @@
 .contact-cards .contactleft .office-name b{display:block;font-size:15px;font-weight:600;color:#091d2d}
 .office-name span{display:block;font-size:13px;color:#65717a;margin-top:2px}
 .contact-cards .contactleft .office-name{margin-bottom:16px}
+/* <br/> w HTML zabezpiecza układ; przy display:block nie dublujemy odstępów */
+.footer-team br,.office-name br{display:none}
