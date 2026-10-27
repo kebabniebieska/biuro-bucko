@@ -1,4 +1,7 @@
-/* Wczytuje wszystkie teksty z jednego pliku teksty.txt. */
+/* Wczytuje teksty z pliku teksty.txt.
+   Każdy wpis jest dopasowywany po oryginalnym tekście (fragment po "NNN | "),
+   więc gdy HTML i teksty.txt są z różnych wersji, niepasujące wpisy są pomijane,
+   a strona pokazuje teksty zapisane w HTML - nic się nie przesuwa. */
 (async function () {
   const page = location.pathname.split('/').pop() || 'index.html';
   try {
@@ -7,6 +10,10 @@
     const all = await response.json();
     const data = all[page];
     if (!data) return;
+    const entries = Object.entries(data.teksty || {}).map(([k, v]) => {
+      const i = k.indexOf(' | ');
+      return {key: i >= 0 ? k.slice(i + 3) : k, value: v};
+    });
     const nodes = [];
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -16,13 +23,20 @@
       }
     });
     while (walker.nextNode()) nodes.push(walker.currentNode);
-    const entries = Object.values(data.teksty || {});
-    nodes.forEach((node, i) => {
-      if (i < entries.length && typeof entries[i] === 'string') {
-        const original = node.textContent;
-        const leading = original.match(/^\s*/)?.[0] || '';
-        const trailing = original.match(/\s*$/)?.[0] || '';
-        node.textContent = leading + entries[i] + trailing;
+    let pos = 0;
+    nodes.forEach(node => {
+      const original = node.textContent;
+      const snippet = original.trim().slice(0, 75);
+      for (let j = pos; j < entries.length && j < pos + 40; j++) {
+        if (entries[j].key === snippet) {
+          if (typeof entries[j].value === 'string') {
+            const leading = original.match(/^\s*/)?.[0] || '';
+            const trailing = original.match(/\s*$/)?.[0] || '';
+            node.textContent = leading + entries[j].value + trailing;
+          }
+          pos = j + 1;
+          break;
+        }
       }
     });
     if (typeof data.tytul_strony === 'string') document.title = data.tytul_strony;
