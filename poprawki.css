@@ -1,4 +1,4 @@
-/* Poprawki 26.10.2026 — wspólny nagłówek, ikony, widoczność sekcji pod banerem */
+/* Poprawki 26.10.2026 - wspólny nagłówek, ikony, widoczność sekcji pod banerem */
 
 /* Sekcja pod banerem na stronie Start była niewidoczna (klasa reveal-tile bez skryptu, który by ją odsłaniał). */
 .mb-next .reveal-tile{opacity:1;transform:none}
@@ -8,7 +8,7 @@
 .premium-links a{padding:6px 0;border-bottom:2px solid transparent}
 .premium-links .current{border-bottom-color:#b98d43}
 
-/* Nagłówki podstron — ta sama kremowa tonacja co nagłówek */
+/* Nagłówki podstron - ta sama kremowa tonacja co nagłówek */
 .sky{background:linear-gradient(115deg,#faf8f3 0%,#f5f0e8 62%,#e9dfcd 100%)}
 .page-head{padding:56px 26px 70px}
 

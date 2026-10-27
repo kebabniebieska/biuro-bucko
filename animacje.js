@@ -1,6 +1,6 @@
-/* Stabilne animacje wejścia — uruchamiane przy każdej nawigacji. */
+/* Stabilne animacje wejścia - uruchamiane przy każdej nawigacji. */
 (() => {
-  const groups = ['.services', '.teasers', '.benefits', '.statsgrid', '.contactgrid', '.trust'];
+  const groups = ['.services', '.teasers', '.benefits', '.statsgrid', '.contactgrid', '.trust', '.trust-band-grid'];
   const elements = [...new Set(groups.flatMap(selector => [...document.querySelectorAll(selector)].flatMap(group => [...group.children])))];
   if (!elements.length) return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

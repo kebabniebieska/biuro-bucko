@@ -1,4 +1,4 @@
-/* Formularz kontaktowy — walidacja i wysyłka przez FormSubmit (bez przeładowania strony). */
+/* Formularz kontaktowy - walidacja i wysyłka przez FormSubmit (bez przeładowania strony). */
 (function(){
   const f=document.getElementById('contact-form'); if(!f) return;
   const status=f.querySelector('.cf-status'), btn=f.querySelector('.cf-submit');
