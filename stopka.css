@@ -173,3 +173,4 @@
 /* Menu z 5 pozycjami */
 .premium-links{gap:26px}
 @media(max-width:1180px){.premium-links{gap:18px}.premium-links a{font-size:10.5px}}
+.member-photo img{object-position:center 20%}
